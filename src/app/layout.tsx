@@ -1,7 +1,6 @@
 type Props = {
   content: React.ReactNode,
   sideMainInfos: React.ReactNode,
-  children: React.ReactNode
 }
 
 import './globals.css'
@@ -16,10 +15,13 @@ export const metadata: Metadata = {
   description: 'Dev Felipe',
 }
 
-export default function RootLayout( {content, sideMainInfos, children } : Props) {
+export default function RootLayout( {content, sideMainInfos } : Props) {
   return (
     <html lang="pt-br">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className + "relative"}>
+        {content}
+        {sideMainInfos}
+      </body>
     </html>
   )
-}
+} 
